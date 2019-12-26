@@ -3,21 +3,79 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #fbf3f2;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.Map-size {
-  height: 100vh;
-  width: 100%;
+  display: flex;
 }
 
 .Markup-icon {
-  color: #ff0000;
+  color: #fa991c;
+}
+
+.Loading-spinner {
+  color: #fa991c !important;
+}
+
+.Header {
+  background-color: #032539 !important;
+  height: 10vh;
+  display: flex;
+}
+
+.Helper-icon {
+  color: #fbf3f2;
+  font-size: 30px !important;
+  position: absolute;
+  left: 15px;
+  top: 5px;
+}
+
+.Info-icon {
+  color: #fbf3f2 !important;
+  font-size: 30px !important;
+  position: absolute;
+  left: 50px;
+  top: 5px;
+}
+
+.Footer {
+  background-color: #032539 !important;
+  height: 10vh;
+}
+
+.Footer-content {
+  color: #fbf3f2 !important;
+  position: absolute;
+  font-size: 10px;
+  left: 10px !important;
+  bottom: 10px !important;
+  display: flex;
+}
+
+.Typography-header {
+  font-size: 15px !important;
+  font-weight: bold !important;
+  text-align: center;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  margin-inline: 10px !important;
+}
+
+.Typography-content {
+  font-size: 12px !important;
+  text-align: center;
+  margin-inline: 10px !important;
+}
+
+.Further-information {
+  font-size: 12px !important;
+  text-align: center;
+  color: #fa991c !important;
+  font-weight: bold !important;
 }
