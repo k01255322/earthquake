@@ -14,16 +14,8 @@
   display: flex;
 }
 
-.Markup-icon {
-  color: #fa991c;
-}
-
-.Loading-spinner {
-  color: #fa991c !important;
-}
-
 .Header {
-  background-color: #032539 !important;
+  background-color: #032539;
   height: 10vh;
   display: flex;
 }
@@ -45,7 +37,7 @@
 }
 
 .Footer {
-  background-color: #032539 !important;
+  background-color: #032539;
   height: 10vh;
 }
 
@@ -53,13 +45,13 @@
   color: #fbf3f2 !important;
   position: absolute;
   font-size: 10px;
-  left: 10px !important;
-  bottom: 10px !important;
+  left: 10px;
+  bottom: 10px;
   display: flex;
 }
 
 .Typography-header {
-  font-size: 15px !important;
+  font-size: 15px;
   font-weight: bold !important;
   text-align: center;
   margin-top: 5px !important;
@@ -75,7 +67,6 @@
 
 .Further-information {
   font-size: 12px !important;
-  text-align: center;
   color: #fa991c !important;
   font-weight: bold !important;
 }

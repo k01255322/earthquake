@@ -1,11 +1,10 @@
 import { Container } from "@material-ui/core";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Map from "./Map";
+import Mapbox from "./Mapbox";
 
 export default function Get() {
-  const [coo, setCoo] = useState([{}]);
-  const [genTime, setGenTime] = useState(null);
+  const [data, setData] = useState([{}]);
 
   const url =
     "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojson";
@@ -16,7 +15,7 @@ export default function Get() {
       response => {
         const data = response.data;
 
-        const cooArray = [];
+        const dataArray = [];
         // Storing the size of the array
         const count = data.metadata.count;
 
@@ -25,10 +24,6 @@ export default function Get() {
          * accessable
          */
 
-        // Convert Unix Time Stamp to UTC String for Generated Time
-        const tg = new Date(data.metadata.generated);
-        const formattedGeneratedTime = tg.toUTCString("dd.mm.yyyy hh:MM:ss");
-
         for (let i = 0; i < count; i++) {
           // Convert Unix Time Stamp to UTC String
           const t = new Date(data.features[i].properties.time);
@@ -36,7 +31,7 @@ export default function Get() {
           const tu = new Date(data.features[i].properties.updated);
           const formattedUpdateTime = tu.toUTCString("dd.mm.yyyy hh:MM:ss");
 
-          cooArray[i] = {
+          dataArray[i] = {
             key: data.features[i].id,
             // coordinates
             geoType: data.features[i].geometry.type,
@@ -71,8 +66,7 @@ export default function Get() {
           };
         }
 
-        setCoo(cooArray);
-        setGenTime(formattedGeneratedTime);
+        setData(dataArray);
       },
       error => {
         console.log(error);
@@ -88,7 +82,7 @@ export default function Get() {
   return (
     <div>
       <Container maxWidth={false}>
-        <Map data={coo} />
+        <Mapbox data={data} />
       </Container>
     </div>
   );

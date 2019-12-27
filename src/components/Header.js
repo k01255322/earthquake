@@ -4,17 +4,33 @@ import InfoIcon from "@material-ui/icons/Info";
 import { Button, Tooltip } from "@material-ui/core";
 
 export default function Header() {
-  const helpText = `
-    Hover over a marker to display its coordinates. 
-    Click on a marker to display further details. 
-    Every marker contains a button that will forward you to the homepage of the USGS to 
-    provide you with further information. You can close a marker by clicking somewhere
-    outside of the marker or by pressing the "ESC"-key on your keyboard. 
-    
-    May the force be with you!
-    `;
+  const helpText = (
+    <div>
+      <p>
+        The markers are clustered. Zoom in (mouse wheel / zoomcontrol) to see
+        further markers.
+      </p>
+      <p>Click on a marker to display details.</p>
+      <p>
+        Every marker contains a button that will forward you to the homepage of
+        the USGS to provide further information.
+      </p>
+      <p>
+        Close a marker by clicking somewhere outside of the marker or by
+        pressing the "ESC"-key on the keyboard.
+      </p>
+      <p>May the force be with you!</p>
+    </div>
+  );
 
-  const infoText = `Click here to be forwarded to the GeoJSON Summary Format of USGS science for a changing world`;
+  const infoText = (
+    <div>
+      <p>
+        Click here to be forwarded to the GeoJSON Summary Format of USGS science
+        for a changing world.
+      </p>
+    </div>
+  );
 
   return (
     <div className="Header">
@@ -23,11 +39,11 @@ export default function Header() {
         target="_blank"
       >
         <Tooltip title={infoText}>
-          <InfoIcon className="Info-icon" />
+          <HelpIcon className="Helper-icon" />
         </Tooltip>
       </Button>
       <Tooltip title={helpText}>
-        <HelpIcon className="Helper-icon" />
+        <InfoIcon className="Info-icon" />
       </Tooltip>
     </div>
   );
